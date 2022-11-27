@@ -87,9 +87,9 @@ flightabi, flightaddress to read from respective path
       </section>
 ```
 - Go to Flights.js file and implement this
--- Create functions say - "registerFlights", "fetchFlight"
--- Update "sample" reference to flight 
--- executeTxn() function expects four params "contractInstance,provider,functionName,[params separated by comma, leave if empty]"
--- queryData() function also expects the same four params "contractInstance,provider,functionName,[params separated by comma,leave if empty] "
+- Create functions say - "registerFlights", "fetchFlight"
+- Update "sample" reference to flight 
+- executeTxn() function expects four params "contractInstance,provider,functionName,[params separated by comma, leave if empty]"
+- queryData() function also expects the same four params "contractInstance,provider,functionName,[params separated by comma,leave if empty] "
 
 All Set, now you should be able to write data onto blockchain & read.
