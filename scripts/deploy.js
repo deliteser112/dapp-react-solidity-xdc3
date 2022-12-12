@@ -7,12 +7,30 @@ async function deploy(name, ...params) {
 }
 
 async function main() {
-  const sample = await deploy('SampleContract', "0xb3db178db835b4dfcb4149b2161644058393267d");
-  console.log("sample deployed to:", sample.address);
-  writeFileSync('output.json', JSON.stringify({
-    SampleContract: sample.address
-  }, null, 2));
+  const safeDecMath = await deploy('SafeDecimalMath');
+  console.log("SafeDecimalMath deployed", safeDecMath.address)
+  const addr = await deploy('AddressResolver');
+  console.log("AddressResolver deployed", addr.address)
+  const exchange = await deploy('ExchangeRate', "0x33f4212b027e22af7e6ba21fc572843c0d701cd1", "0x9BF6b589dD637A2972EbB0e2b19b85d98f33b5Bb", "fcbec033ce1f4700a6aa8db65d06b877");
+  console.log("ExchangeRate deployed", exchange.address);
 
+  const xSynContract = await ethers.getContractFactory("XSynProtocol", {
+    libraries: {
+      SafeDecimalMath: safeDecMath.address,
+    },
+  });
+
+  const xSyn = await xSynContract.deploy().then(f => f.deployed());;
+  console.log("XSyn Protocol deployed", xSyn.address);
+  const xdusd = await deploy('XDUSDCore', "XDUSD Contract", "XDUSD", xSyn.address);
+  console.log("XDUSDCore deployed", xdusd.address)
+
+  writeFileSync('output.json', JSON.stringify({
+    XSYNPROTOCOL: xSyn.address,
+    ADDRESSRESOLVER: addr.address,
+    EXCHANGE: exchange.address,
+    XDUSDCORE: xdusd.address
+  }, null, 2));
 }
 if (require.main === module) {
   main().then(() => process.exit(0))

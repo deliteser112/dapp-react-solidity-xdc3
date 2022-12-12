@@ -92,4 +92,8 @@ flightabi, flightaddress to read from respective path
 - executeTxn() function expects four params "contractInstance,provider,functionName,[params separated by comma, leave if empty]"
 - queryData() function also expects the same four params "contractInstance,provider,functionName,[params separated by comma,leave if empty] "
 
-All Set, now you should be able to write data onto blockchain & read.
+All Set, now you should be able to write data onto blockchain & read data from Blockchain.
+
+## Acknowledgements
+
+ - [xdcpay-web3modal](https://www.npmjs.com/package/xdcpay-web3modal)

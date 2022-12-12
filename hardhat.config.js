@@ -25,7 +25,7 @@ module.exports = {
       url: 'http://localhost:8545'
     },
     apothem: {
-      url: 'https://rpc.apothem.network',
+      url: 'https://erpc.apothem.network',
       accounts: [process.env.PRIVATE_KEY],
     },
     mainnet: {
