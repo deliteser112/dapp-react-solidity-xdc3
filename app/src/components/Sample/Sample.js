@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import './Sample.css';
-const { executeTranasction, EthereumContext, log, queryData } = require('react-solidity-web3');
+const { executeTxn, EthereumContext, log, queryData } = require('react-solidity-web3');
 
 function Sample() {
   const [submitting, setSubmitting] = useState(false);
@@ -13,7 +13,7 @@ function Sample() {
     let _flightAddress = "0xA9e6835929f32DD440290b4c81466ff554b82667";
     let _careerFlightNo = "ING695";
     let _serviceProviderName = "Indigo Airlines";
-    let response1 = await executeTranasction(sample, provider, 'registerFlights', [_flightAddress, _careerFlightNo, _serviceProviderName]);
+    let response1 = await executeTxn(sample, provider, 'registerFlights', [_flightAddress, _careerFlightNo, _serviceProviderName]);
     log("registerFlights", "hash", response1.txHash)
     setSubmitting(false);
   }
