@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const { connectWallet, EthereumContext, createInstance, log } = require('react-solidity-web3');
+const { connectWallet, EthereumContext, createContractInstance, log } = require('react-solidity-web3');
 
 var connectOptions = {
   rpcObj: {
@@ -29,7 +29,7 @@ function App() {
     const instance = await connectWallet(connectOptions);
     const provider = new ethers.providers.Web3Provider(instance);
     const signer = provider.getSigner();
-    const sample = await createInstance(address, abi, provider);
+    const sample = await createContractInstance(address, abi, provider);
     const account = signer.getAddress();
     setethereumContext({ provider, sample, account })
     log("Connect", "Get Address", await signer.getAddress());
