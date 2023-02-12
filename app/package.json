@@ -19,7 +19,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
-    "react-solidity-web3": "^1.0.5",
+    "react-solidity-xdc3": "^1.0.12",
     "react-toastify": "^7.0.3",
     "redis": "^4.1.0",
     "web-vitals": "^1.0.1",

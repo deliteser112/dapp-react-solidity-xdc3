@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import './Sample.css';
-const { executeTransaction, EthereumContext, log, queryData } = require('react-solidity-web3');
+const { executeTransaction, EthereumContext, log, queryData } = require('react-solidity-xdc3');
 
 function Sample() {
   const [submitting, setSubmitting] = useState(false);
