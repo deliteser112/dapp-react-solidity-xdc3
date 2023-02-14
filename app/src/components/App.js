@@ -4,6 +4,8 @@ import Sample from './Sample/Sample';
 import Header from './Header/Header';
 import { abi } from '../artifacts/contracts/SampleContract.sol/SampleContract.json';
 import { SampleContract as address } from '../output.json';
+import { abi as consumerabi} from '../artifacts/contracts/CustomerContract.sol/CustomerContract.json';
+import { CustomerContract as customeraddress } from '../output.json';
 
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
@@ -13,8 +15,8 @@ const { getWeb3Modal, createWeb3Provider, connectWallet, EthereumContext, create
 
 var connectOptions = {
   rpcObj: {
-    50: "https://rpc.xinfin.network",
-    51: "https://rpc.apothem.network"
+    50: "https://erpc.xinfin.network",
+    51: "https://erpc.apothem.network"
   },
   network: "mainnet",
   toDisableInjectedProvider: true
@@ -30,11 +32,13 @@ function App() {
     const instance = await web3Modal.connect();
     const { provider, signer } = await createWeb3Provider(instance);
     const sample = await createContractInstance(address, abi, provider);
+    const consumer = await createContractInstance(customeraddress, consumerabi, provider);
     const account = signer.getAddress();
-    setethereumContext({ provider, sample, account })
+    setethereumContext({ provider, sample, account, consumer})
     log("Connect", "Get Address", await signer.getAddress());
     setconnecting(true);
   }
+  
   return (
     <div className="App">
       <Header />

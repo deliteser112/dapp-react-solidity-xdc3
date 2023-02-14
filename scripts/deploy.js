@@ -9,8 +9,11 @@ async function deploy(name, ...params) {
 async function main() {
   const sample = await deploy('SampleContract', "0xb3db178db835b4dfcb4149b2161644058393267d");
   console.log("sample deployed to:", sample.address);
+  const consumer = await deploy('CustomerContract');
+  console.log("consumer deployed to:", consumer.address);
   writeFileSync('output.json', JSON.stringify({
-    SampleContract: sample.address
+    SampleContract: sample.address,
+    CustomerContract: consumer.address
   }, null, 2));
 
 }
