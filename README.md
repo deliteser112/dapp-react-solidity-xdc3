@@ -5,6 +5,12 @@ This guide will give you a clear direction on how to deploy your smart contract,
 
 if any queries / comments, feel free to raise an issue.
 
+# IMPORTANT LINKS:
+Apothem FAUCET - https://faucet.apothem.network/
+Apothem Blockchain explorer - https://explorer.apothem.network/
+XDCPay Wallet - https://chrome.google.com/webstore/detail/xdcpay/bocpokimicclpaiekenaeelehdjllofo
+NPM package - https://www.npmjs.com/package/react-solidity-web3-v2
+
 # Table of Contents
 - Pre-requisites
 - How it works

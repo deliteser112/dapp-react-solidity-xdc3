@@ -48,7 +48,7 @@ function Sample() {
   const addBook = async (event) => {
     event.preventDefault();
     setSubmitting(true);
-    let bookname = "My First Book";
+    let bookname = "My Second Book";
     let response = await executeTransaction(consumer, provider, 'addBooks', [bookname], 0);
     log("addBook", "hash", response)
     setSubmitting(false);
