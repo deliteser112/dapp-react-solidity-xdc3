@@ -6,10 +6,15 @@ This guide will give you a clear direction on how to deploy your smart contract,
 if any queries / comments, feel free to raise an issue.
 
 # IMPORTANT LINKS:
+XDC Mainnet explorer - https://explorer.xinfin.network/
 Apothem FAUCET - https://faucet.apothem.network/
 Apothem Blockchain explorer - https://explorer.apothem.network/
 XDCPay Wallet - https://chrome.google.com/webstore/detail/xdcpay/bocpokimicclpaiekenaeelehdjllofo
 NPM package - https://www.npmjs.com/package/react-solidity-web3-v2
+XDC Remix - https://remix.xinfin.network/#optimize=true&runs=200&evmVersion=null&version=soljson-v0.4.26+commit.4563c3fc.js
+Developer Forum -https://www.xdc.dev/
+How to Articles - https://docs.xdc.community/learn/how-to-articles/
+XDC Tools - https://xinfin.org/xdc-chain-network-tools-and-documents
 
 # Table of Contents
 - Pre-requisites
